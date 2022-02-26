@@ -138,4 +138,133 @@ abline<span class="token punctuation">(</span>lm<span class="token punctuation">
 lines<span class="token punctuation">(</span>lowess<span class="token punctuation">(</span>diamonds<span class="token operator">$</span>carat<span class="token punctuation">,</span> diamonds<span class="token operator">$</span>price<span class="token punctuation">,</span> f <span class="token operator">=</span> <span class="token number">0.05</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
       col <span class="token operator">=</span> <span class="token string">"green"</span><span class="token punctuation">)</span>
 
-pairs<span class="token punctuation">(</span>mtcars<span class="token punctuation">)</span> <span class="token comment"># grid of all pairwise scatter plots</span></code></pre></div></section><hr/><footer><div class="bio"><div data-gatsby-image-wrapper="" style="width:50px;height:50px" class="gatsby-image-wrapper bio-avatar"><div aria-hidden="true" data-placeholder-image="" style="opacity:1;transition:opacity 500ms linear;background-color:#e8e8e8;width:50px;height:50px;position:relative"></div><picture><source type="image/avif" data-srcset="/static/9800c8cff6af34fec0ce086301ee80d2/d4bf4/portrait-photo-edited.avif 50w,/static/9800c8cff6af34fec0ce086301ee80d2/ee81f/portrait-photo-edited.avif 100w" sizes="50px"/><source type="image/webp" data-srcset="/static/9800c8cff6af34fec0ce086301ee80d2/3faea/portrait-photo-edited.webp 50w,/static/9800c8cff6af34fec0ce086301ee80d2/6a679/portrait-photo-edited.webp 100w" sizes="50px"/><img data-gatsby-image-ssr="" layout="fixed" data-main-image="" style="opacity:0" sizes="50px" decoding="async" loading="lazy" data-src="/static/9800c8cff6af34fec0ce086301ee80d2/d24ee/portrait-photo-edited.jpg" data-srcset="/static/9800c8cff6af34fec0ce086301ee80d2/d24ee/portrait-photo-edited.jpg 50w,/static/9800c8cff6af34fec0ce086301ee80d2/64618/portrait-photo-edited.jpg 100w" alt="Profile picture"/></picture><noscript><picture><source type="image/avif" srcSet="/static/9800c8cff6af34fec0ce086301ee80d2/d4bf4/portrait-photo-edited.avif 50w,/static/9800c8cff6af34fec0ce086301ee80d2/ee81f/portrait-photo-edited.avif 100w" sizes="50px"/><source type="image/webp" srcSet="/static/9800c8cff6af34fec0ce086301ee80d2/3faea/portrait-photo-edited.webp 50w,/static/9800c8cff6af34fec0ce086301ee80d2/6a679/portrait-photo-edited.webp 100w" sizes="50px"/><img data-gatsby-image-ssr="" layout="fixed" data-main-image="" style="opacity:0" sizes="50px" decoding="async" loading="lazy" src="/static/9800c8cff6af34fec0ce086301ee80d2/d24ee/portrait-photo-edited.jpg" srcSet="/static/9800c8cff6af34fec0ce086301ee80d2/d24ee/portrait-photo-edited.jpg 50w,/static/9800c8cff6af34fec0ce086301ee80d2/64618/portrait-photo-edited.jpg 100w" alt="Profile picture"/></picture></noscript><script type="module">const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1)}}</script></div><p>Written by <strong>Guy Roberts</strong> <!-- -->- Maths and Computer Science student at Durham University.<!-- --> </p></div></footer></article><nav class="blog-post-nav"><ul style="display:flex;flex-wrap:wrap;justify-content:space-between;list-style:none;padding:0"><li><a rel="prev" href="/linear-models/">← <!-- -->Linear Models</a></li><li></li></ul></nav></main><footer>© <!-- -->2022<!-- -->, Guy Roberts. All Rights Reserved.<!-- --> </footer></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/data-science-programming/";window.___webpackCompilationHash="116796bcf3604703d5ac";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-67664a8ccc6c9f02b880.js"],"app":["/app-13a8454db9d9955ae7e0.js"],"component---src-pages-404-js":["/component---src-pages-404-js-27981ca7dd461cb4280e.js"],"component---src-pages-index-js":["/component---src-pages-index-js-2aaee1df3403a053a0a8.js"],"component---src-pages-using-typescript-tsx":["/component---src-pages-using-typescript-tsx-422222b701089fbe3088.js"],"component---src-templates-blog-post-js":["/component---src-templates-blog-post-js-35ad3e6dfb54f2d9fb29.js"]};/*]]>*/</script><script src="/polyfill-67664a8ccc6c9f02b880.js" nomodule=""></script><script src="/component---src-templates-blog-post-js-35ad3e6dfb54f2d9fb29.js" async=""></script><script src="/commons-28b5814e0198399b95d2.js" async=""></script><script src="/app-13a8454db9d9955ae7e0.js" async=""></script><script src="/framework-e413e527015be9a1bdfd.js" async=""></script><script src="/webpack-runtime-f0e89c441e3de9798e56.js" async=""></script></body></html>
+pairs<span class="token punctuation">(</span>mtcars<span class="token punctuation">)</span> <span class="token comment"># grid of all pairwise scatter plots</span></code></pre></div>
+<h4>Creating multiple plots on the same area</h4>
+<p>In R, we can create multiple plots on the same figure by using the <code class="language-text">par</code> command.</p>
+<div class="gatsby-highlight" data-language="r"><pre class="language-r"><code class="language-r"><span class="token comment"># divides into 2 plot areas</span>
+par<span class="token punctuation">(</span>mfrow <span class="token operator">=</span> c<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+plot<span class="token punctuation">(</span>movies<span class="token operator">$</span>length<span class="token punctuation">,</span> movies<span class="token operator">$</span>budget<span class="token punctuation">)</span>
+boxplot<span class="token punctuation">(</span>movies<span class="token operator">$</span>length<span class="token punctuation">)</span>
+par<span class="token punctuation">(</span>mfrow <span class="token operator">=</span> c<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre></div>
+<h3>Tidy data in R</h3>
+<ul>
+<li>We can use <code class="language-text">Tidyverse</code> in R which allows us to create “tidy” data.</li>
+<li>Data is in “tidy” form when
+<ul>
+<li>each variable is in a column</li>
+<li>each observation is in a row</li>
+<li>each type of observation unit forms a table</li>
+</ul>
+</li>
+<li>When data is “tidy” it is easier to to further manipulation with</li>
+</ul>
+<h4>Wide vs Long Data</h4>
+<ul>
+<li>If data is too “wide”, one variable is actually spread over multiple columns</li>
+</ul>
+<img src="/a9fa0ce988d08fc078371ea83884b07b/wide_data.png" alt="Wide data" width="600">
+<ul>
+<li>If data is too “long”, one observation is actually spread over multiple rows</li>
+</ul>
+<img src="/a714d73c09a4e53384e5d5be016fd77f/long_data.png" alt="Long data" width="600">
+<p>We have two key functions for dealing with these problems: <code class="language-text">pivot_longer</code> and <code class="language-text">pivot_wider</code>.</p>
+<h4><code class="language-text">pivot_longer</code></h4>
+<ul>
+<li>Gathers multiple columns into key-value pairs, essentially makes wide data longer</li>
+</ul>
+<img src="/3823d6b6136d0a79a6aa23971467bf4f/pivot_longer.png" alt="pivot longer" width="600">
+<h4><code class="language-text">pivot_wider</code></h4>
+<ul>
+<li>Gather multiple rows into key-value pairs, makes long data wider</li>
+</ul>
+<img src="/615186905ee7ea891538a2c99014a627/pivot_wider.png" alt="pivot wider" width="600">
+<h3>Useful tidyr functions</h3>
+<img src="/4cffeab6c626a9993a72e4646c3aa5e7/fball.png" alt="Fball data" width="400">
+<div class="gatsby-highlight" data-language="r"><pre class="language-r"><code class="language-r">separate<span class="token punctuation">(</span>fball<span class="token punctuation">,</span> <span class="token string">"score"</span><span class="token punctuation">,</span> c<span class="token punctuation">(</span><span class="token string">"home_goals"</span><span class="token punctuation">,</span> <span class="token string">"away_goals"</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre></div>
+<ul>
+<li>This function allows us to separate the “score” column into two separate columns (one for home goals and the other for away goals)</li>
+</ul>
+<h3>Data manipulation (dplyr)</h3>
+<ul>
+<li>There are several main very important functions in the <code class="language-text">dplyr</code> library</li>
+</ul>
+<ol>
+<li><code class="language-text">filter()</code> => separate conditions via <code class="language-text">&amp;</code> and <code class="language-text">|</code></li>
+</ol>
+<div class="gatsby-highlight" data-language="r"><pre class="language-r"><code class="language-r">filter<span class="token punctuation">(</span>fball<span class="token punctuation">,</span> home <span class="token operator">==</span> <span class="token string">"Chelsea"</span> <span class="token operator">|</span> away <span class="token operator">==</span> <span class="token string">"Chelsea"</span><span class="token punctuation">)</span></code></pre></div>
+<ol start="2">
+<li><code class="language-text">arrange()</code> => reorder rows</li>
+</ol>
+<div class="gatsby-highlight" data-language="r"><pre class="language-r"><code class="language-r">arrange<span class="token punctuation">(</span>who<span class="token punctuation">,</span> year<span class="token punctuation">,</span> desc<span class="token punctuation">(</span>country<span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre></div>
+<ul>
+<li>We can use the <code class="language-text">desc()</code> parameter to sort in descending order</li>
+</ul>
+<div class="gatsby-highlight" data-language="r"><pre class="language-r"><code class="language-r">flights <span class="token operator">|</span><span class="token operator">></span>
+  filter<span class="token punctuation">(</span>is.na<span class="token punctuation">(</span>dep_time<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">|</span><span class="token operator">></span>
+  mutate<span class="token punctuation">(</span>sched_dep_time <span class="token operator">=</span> floor<span class="token punctuation">(</span>sched_dep_time<span class="token operator">/</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">|</span><span class="token operator">></span>
+  group_by<span class="token punctuation">(</span>sched_dep_time<span class="token punctuation">)</span> <span class="token operator">|</span><span class="token operator">></span>
+  summarise<span class="token punctuation">(</span>cancelled <span class="token operator">=</span> n<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">|</span><span class="token operator">></span>
+  arrange<span class="token punctuation">(</span>desc<span class="token punctuation">(</span>cancelled<span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre></div>
+<h3>Joining data frames</h3>
+<img src="/534f8069c0264079d0c876f63eafdd54/joining_data_frames.png" alt="Joining data frames" width="600">
+<ul>
+<li>Note: we could also use <code class="language-text">rbind()</code> and <code class="language-text">cbind()</code> to perform similar tasks but these are often error prone, so it is generally better to use the methods above when possible.</li>
+</ul>
+<div class="gatsby-highlight" data-language="r"><pre class="language-r"><code class="language-r">rbind<span class="token punctuation">(</span>who_cases<span class="token punctuation">,</span> who_population<span class="token punctuation">)</span></code></pre></div>
+<h3>Advanced plotting in R (ggplot)</h3>
+<ul>
+<li>We use the <code class="language-text">ggplot()</code> function in R to do any plot, where we have the arguments <code class="language-text">data</code> and <code class="language-text">mappings</code>
+<ul>
+<li>mappings are always specified by a call to <code class="language-text">aes()</code></li>
+</ul>
+</li>
+</ul>
+<div class="gatsby-highlight" data-language="r"><pre class="language-r"><code class="language-r">data<span class="token punctuation">(</span><span class="token string">"diamonds"</span><span class="token punctuation">,</span> package <span class="token operator">=</span> <span class="token string">"ggplot2"</span><span class="token punctuation">)</span>
+
+ggplot<span class="token punctuation">(</span>diamonds<span class="token punctuation">,</span> aes<span class="token punctuation">(</span>x <span class="token operator">=</span> carat<span class="token punctuation">,</span> y <span class="token operator">=</span> price<span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre></div>
+<p>This is good, but we haven’t specified what plot to do, only the data has been given. Hence, we need to use “Geoms” to specify this.</p>
+<div class="gatsby-highlight" data-language="r"><pre class="language-r"><code class="language-r">ggplot<span class="token punctuation">(</span>diamonds<span class="token punctuation">,</span> aes<span class="token punctuation">(</span>x <span class="token operator">=</span> carat<span class="token punctuation">,</span> y <span class="token operator">=</span> price<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">+</span>
+  geom_point<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre></div>
+<ul>
+<li>Geoms inherit the <code class="language-text">data</code> and <code class="language-text">mapping</code> from the original plot, and each geom will build up layers in the order that you call them.</li>
+</ul>
+<div class="gatsby-highlight" data-language="r"><pre class="language-r"><code class="language-r">ggplot<span class="token punctuation">(</span>diamonds<span class="token punctuation">,</span> aes<span class="token punctuation">(</span>x <span class="token operator">=</span> carat<span class="token punctuation">,</span> y <span class="token operator">=</span> price<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">+</span>
+  geom_point<span class="token punctuation">(</span>aes<span class="token punctuation">(</span>colour <span class="token operator">=</span> cut<span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre></div>
+<p><em>The above figure adds colour to the plot; the cuts are colour coded</em></p>
+<ul>
+<li>We can combine multiple geoms together</li>
+</ul>
+<div class="gatsby-highlight" data-language="r"><pre class="language-r"><code class="language-r">ggplot<span class="token punctuation">(</span>diamonds<span class="token punctuation">,</span> aes<span class="token punctuation">(</span>x <span class="token operator">=</span> carat<span class="token punctuation">,</span> y <span class="token operator">=</span> price<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">+</span>
+  geom_point<span class="token punctuation">(</span>aes<span class="token punctuation">(</span>colour <span class="token operator">=</span> cut<span class="token punctuation">)</span><span class="token punctuation">,</span> size <span class="token operator">=</span> <span class="token number">0.2</span><span class="token punctuation">)</span> <span class="token operator">+</span>
+  geom_smooth<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre></div>
+<p><em>Note: <code class="language-text">geom_smooth</code> adds a smoothing line, so we can more easily see any trends in the data.</em></p>
+<div class="gatsby-highlight" data-language="r"><pre class="language-r"><code class="language-r">ggplot<span class="token punctuation">(</span>diamonds<span class="token punctuation">,</span> aes<span class="token punctuation">(</span>x <span class="token operator">=</span> carat<span class="token punctuation">,</span> y <span class="token operator">=</span> price<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">+</span>
+  geom_point<span class="token punctuation">(</span>aes<span class="token punctuation">(</span>colour <span class="token operator">=</span> cut<span class="token punctuation">)</span><span class="token punctuation">,</span> size <span class="token operator">=</span> <span class="token number">0.2</span><span class="token punctuation">)</span> <span class="token operator">+</span>
+  geom_smooth<span class="token punctuation">(</span>aes<span class="token punctuation">(</span>colour <span class="token operator">=</span> cut<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">+</span>
+  xlab<span class="token punctuation">(</span><span class="token string">"Number of carats"</span><span class="token punctuation">)</span> <span class="token operator">+</span> ylab<span class="token punctuation">(</span><span class="token string">"Price in $"</span><span class="token punctuation">)</span></code></pre></div>
+<ul>
+<li>Some more examples…</li>
+</ul>
+<div class="gatsby-highlight" data-language="r"><pre class="language-r"><code class="language-r">ggplot<span class="token punctuation">(</span>diamonds<span class="token punctuation">,</span> aes<span class="token punctuation">(</span>x <span class="token operator">=</span> carat<span class="token punctuation">,</span> y <span class="token operator">=</span> price<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">+</span>
+  geom_hex<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+ggplot<span class="token punctuation">(</span>diamonds<span class="token punctuation">,</span> aes<span class="token punctuation">(</span>x <span class="token operator">=</span> cut<span class="token punctuation">,</span> y <span class="token operator">=</span> carat<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">+</span>
+  geom_boxplot<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre></div>
+<h4>Faceting</h4>
+<ul>
+<li>Faceting enables splitting the data into multiple plots according to a categorical variable
+<ul>
+<li><code class="language-text">facet_wrap</code> - splits a single variable ( ~ var )</li>
+<li><code class="language-text">facet_grid</code> - two variable split ( rows_var ~ cols_var )</li>
+</ul>
+</li>
+</ul>
+<div class="gatsby-highlight" data-language="r"><pre class="language-r"><code class="language-r"><span class="token comment"># 1. facet_wrap</span>
+ggplot<span class="token punctuation">(</span>mtcars<span class="token punctuation">,</span> aes<span class="token punctuation">(</span>x <span class="token operator">=</span> hp<span class="token punctuation">,</span> y <span class="token operator">=</span> mpg<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">+</span>
+  facet_wrap<span class="token punctuation">(</span><span class="token operator">~</span> gear<span class="token punctuation">)</span> <span class="token operator">+</span>
+  geom_point<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 2. facet_grid</span>
+ggplot<span class="token punctuation">(</span>mtcars<span class="token punctuation">,</span> aes<span class="token punctuation">(</span>x <span class="token operator">=</span> hp<span class="token punctuation">,</span> y <span class="token operator">=</span> mpg<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">+</span>
+  facet_grid<span class="token punctuation">(</span>cyl <span class="token operator">~</span> gear<span class="token punctuation">)</span> <span class="token operator">+</span>
+  geom_point<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre></div></section><hr/><footer><div class="bio"><div data-gatsby-image-wrapper="" style="width:50px;height:50px" class="gatsby-image-wrapper bio-avatar"><div aria-hidden="true" data-placeholder-image="" style="opacity:1;transition:opacity 500ms linear;background-color:#e8e8e8;width:50px;height:50px;position:relative"></div><picture><source type="image/avif" data-srcset="/static/9800c8cff6af34fec0ce086301ee80d2/d4bf4/portrait-photo-edited.avif 50w,/static/9800c8cff6af34fec0ce086301ee80d2/ee81f/portrait-photo-edited.avif 100w" sizes="50px"/><source type="image/webp" data-srcset="/static/9800c8cff6af34fec0ce086301ee80d2/3faea/portrait-photo-edited.webp 50w,/static/9800c8cff6af34fec0ce086301ee80d2/6a679/portrait-photo-edited.webp 100w" sizes="50px"/><img data-gatsby-image-ssr="" layout="fixed" data-main-image="" style="opacity:0" sizes="50px" decoding="async" loading="lazy" data-src="/static/9800c8cff6af34fec0ce086301ee80d2/d24ee/portrait-photo-edited.jpg" data-srcset="/static/9800c8cff6af34fec0ce086301ee80d2/d24ee/portrait-photo-edited.jpg 50w,/static/9800c8cff6af34fec0ce086301ee80d2/64618/portrait-photo-edited.jpg 100w" alt="Profile picture"/></picture><noscript><picture><source type="image/avif" srcSet="/static/9800c8cff6af34fec0ce086301ee80d2/d4bf4/portrait-photo-edited.avif 50w,/static/9800c8cff6af34fec0ce086301ee80d2/ee81f/portrait-photo-edited.avif 100w" sizes="50px"/><source type="image/webp" srcSet="/static/9800c8cff6af34fec0ce086301ee80d2/3faea/portrait-photo-edited.webp 50w,/static/9800c8cff6af34fec0ce086301ee80d2/6a679/portrait-photo-edited.webp 100w" sizes="50px"/><img data-gatsby-image-ssr="" layout="fixed" data-main-image="" style="opacity:0" sizes="50px" decoding="async" loading="lazy" src="/static/9800c8cff6af34fec0ce086301ee80d2/d24ee/portrait-photo-edited.jpg" srcSet="/static/9800c8cff6af34fec0ce086301ee80d2/d24ee/portrait-photo-edited.jpg 50w,/static/9800c8cff6af34fec0ce086301ee80d2/64618/portrait-photo-edited.jpg 100w" alt="Profile picture"/></picture></noscript><script type="module">const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1)}}</script></div><p>Written by <strong>Guy Roberts</strong> <!-- -->- Maths and Computer Science student at Durham University.<!-- --> </p></div></footer></article><nav class="blog-post-nav"><ul style="display:flex;flex-wrap:wrap;justify-content:space-between;list-style:none;padding:0"><li><a rel="prev" href="/linear-models/">← <!-- -->Linear Models</a></li><li></li></ul></nav></main><footer>© <!-- -->2022<!-- -->, Guy Roberts. All Rights Reserved.<!-- --> </footer></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/data-science-programming/";window.___webpackCompilationHash="c0db9e6323e581ec5479";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-67664a8ccc6c9f02b880.js"],"app":["/app-13a8454db9d9955ae7e0.js"],"component---src-pages-404-js":["/component---src-pages-404-js-27981ca7dd461cb4280e.js"],"component---src-pages-index-js":["/component---src-pages-index-js-2aaee1df3403a053a0a8.js"],"component---src-pages-using-typescript-tsx":["/component---src-pages-using-typescript-tsx-422222b701089fbe3088.js"],"component---src-templates-blog-post-js":["/component---src-templates-blog-post-js-35ad3e6dfb54f2d9fb29.js"]};/*]]>*/</script><script src="/polyfill-67664a8ccc6c9f02b880.js" nomodule=""></script><script src="/component---src-templates-blog-post-js-35ad3e6dfb54f2d9fb29.js" async=""></script><script src="/commons-28b5814e0198399b95d2.js" async=""></script><script src="/app-13a8454db9d9955ae7e0.js" async=""></script><script src="/framework-e413e527015be9a1bdfd.js" async=""></script><script src="/webpack-runtime-f0e89c441e3de9798e56.js" async=""></script></body></html>
