@@ -1,13 +1,13 @@
 module.exports = {
   pathPrefix: `/course-notes`,
   siteMetadata: {
-    title: `Statistical Modelling`,
+    title: `Data Science and Statistics`,
     author: {
       name: `Guy Roberts`,
       summary: `- Maths and Computer Science student at Durham University.`,
     },
     description: `Course notes for Statistical Modelling module.`,
-    siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
+    siteUrl: `https://guyroberts21.github.io/course-notes/`,
     social: {
       twitter: `guyroberts2102`,
     },

@@ -344,3 +344,70 @@ ggplot(mtcars, aes(x = hp, y = mpg)) +
   facet_grid(cyl ~ gear) +
   geom_point()
 ```
+
+### Date and Time in R
+
+#### Constructing dates/date-times
+
+```r
+today() # "2022-02-26"
+
+now() # "2022-02-26 20:01:49 GMT"
+```
+
+_See also: `ymd_hms`, `make_datetime` etc._
+
+#### Extracting from dates/date-times
+
+We can get the individual components of a date-time...
+
+```r
+datetime <- ymd_hms("2021-12-02 12:33:59")
+
+year(datetime) # 2021
+
+month(datetime) # 12
+
+mday(datetime) # 2
+
+yday(datetime) # 336
+
+wday(datetime) # 5
+
+# ...
+```
+
+#### Durations
+
+- In R, we can perform a variety of actions with dates, for example basic operations such as subtraction and addition
+
+```r
+einstein <- dmy("14th March 1879")
+age <- today() - einstein
+```
+
+### Strings in R
+
+- A string (as in any programming context) is defined as a sequence of characters shown below
+
+```r
+s <- "Hello World!"
+```
+
+There are many methods for working with strings
+
+```r
+z <- c("Alice", "Bob", "Connie", "David")
+str_sub(z, 1, 4) # Alic Bob Conn Davi
+```
+
+_See also: `str_trim`, `str_squish`_
+
+- Using the `str_view` method in R, we can view how a particular [Regex](https://en.wikipedia.org/wiki/Regular_expression) will be evaluated
+
+```r
+y <- c("There were 122 in total", "Overall about 390 found", "100 but no more")
+str_view(y, "[0-9]+")
+```
+
+- There are also many more methods for working with regular expressions, which are available in the [Documentation for R](https://www.rdocumentation.org/).
