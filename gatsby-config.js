@@ -7,6 +7,7 @@ module.exports = {
     },
     description: `Course notes for Statistical Modelling module.`,
     siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
+    pathPrefix: `/course-notes`,
     social: {
       twitter: `guyroberts2102`,
     },

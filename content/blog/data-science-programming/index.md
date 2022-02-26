@@ -180,3 +180,167 @@ lines(lowess(diamonds$carat, diamonds$price, f = 0.05),
 
 pairs(mtcars) # grid of all pairwise scatter plots
 ```
+
+#### Creating multiple plots on the same area
+
+In R, we can create multiple plots on the same figure by using the `par` command.
+
+```r
+# divides into 2 plot areas
+par(mfrow = c(2,1))
+plot(movies$length, movies$budget)
+boxplot(movies$length)
+par(mfrow = c(1,1))
+```
+
+### Tidy data in R
+
+- We can use `Tidyverse` in R which allows us to create "tidy" data.
+- Data is in "tidy" form when
+  - each variable is in a column
+  - each observation is in a row
+  - each type of observation unit forms a table
+- When data is "tidy" it is easier to to further manipulation with
+
+#### Wide vs Long Data
+
+- If data is too "wide", one variable is actually spread over multiple columns
+
+<img src="./wide_data.PNG" alt="Wide data" width="600"/>
+
+- If data is too "long", one observation is actually spread over multiple rows
+
+<img src="./long_data.PNG" alt="Long data" width="600"/>
+
+We have two key functions for dealing with these problems: `pivot_longer` and `pivot_wider`.
+
+#### `pivot_longer`
+
+- Gathers multiple columns into key-value pairs, essentially makes wide data longer
+
+<img src="./pivot_longer.PNG" alt="pivot longer" width="600"/>
+
+#### `pivot_wider`
+
+- Gather multiple rows into key-value pairs, makes long data wider
+
+<img src="./pivot_wider.PNG" alt="pivot wider" width="600"/>
+
+### Useful tidyr functions
+
+<img src="./fball.PNG" alt="Fball data" width="400"/>
+
+```r
+separate(fball, "score", c("home_goals", "away_goals"))
+```
+
+- This function allows us to separate the "score" column into two separate columns (one for home goals and the other for away goals)
+
+### Data manipulation (dplyr)
+
+- There are several main very important functions in the `dplyr` library
+
+1. `filter()` => separate conditions via `&` and `|`
+
+```r
+filter(fball, home == "Chelsea" | away == "Chelsea")
+```
+
+2. `arrange()` => reorder rows
+
+```r
+arrange(who, year, desc(country))
+```
+
+- We can use the `desc()` parameter to sort in descending order
+
+```r
+flights |>
+  filter(is.na(dep_time)) |>
+  mutate(sched_dep_time = floor(sched_dep_time/100)) |>
+  group_by(sched_dep_time) |>
+  summarise(cancelled = n()) |>
+  arrange(desc(cancelled))
+```
+
+### Joining data frames
+
+<img src="./joining_data_frames.PNG" alt="Joining data frames" width="600"/>
+
+- Note: we could also use `rbind()` and `cbind()` to perform similar tasks but these are often error prone, so it is generally better to use the methods above when possible.
+
+```r
+rbind(who_cases, who_population)
+```
+
+### Advanced plotting in R (ggplot)
+
+- We use the `ggplot()` function in R to do any plot, where we have the arguments `data` and `mappings`
+  - mappings are always specified by a call to `aes()`
+
+```r
+data("diamonds", package = "ggplot2")
+
+ggplot(diamonds, aes(x = carat, y = price))
+```
+
+This is good, but we haven't specified what plot to do, only the data has been given. Hence, we need to use "Geoms" to specify this.
+
+```r
+ggplot(diamonds, aes(x = carat, y = price)) +
+  geom_point()
+```
+
+- Geoms inherit the `data` and `mapping` from the original plot, and each geom will build up layers in the order that you call them.
+
+```r
+ggplot(diamonds, aes(x = carat, y = price)) +
+  geom_point(aes(colour = cut))
+```
+
+_The above figure adds colour to the plot; the cuts are colour coded_
+
+- We can combine multiple geoms together
+
+```r
+ggplot(diamonds, aes(x = carat, y = price)) +
+  geom_point(aes(colour = cut), size = 0.2) +
+  geom_smooth()
+```
+
+_Note: `geom_smooth` adds a smoothing line, so we can more easily see any trends in the data._
+
+```r
+ggplot(diamonds, aes(x = carat, y = price)) +
+  geom_point(aes(colour = cut), size = 0.2) +
+  geom_smooth(aes(colour = cut)) +
+  xlab("Number of carats") + ylab("Price in $")
+```
+
+- Some more examples...
+
+```r
+ggplot(diamonds, aes(x = carat, y = price)) +
+  geom_hex()
+
+ggplot(diamonds, aes(x = cut, y = carat)) +
+  geom_boxplot()
+```
+
+#### Faceting
+
+- Faceting enables splitting the data into multiple plots according to a categorical variable
+  - `facet_wrap` - splits a single variable ( ~ var )
+  - `facet_grid` - two variable split ( rows_var ~ cols_var )
+
+```r
+# 1. facet_wrap
+ggplot(mtcars, aes(x = hp, y = mpg)) +
+  facet_wrap(~ gear) +
+  geom_point()
+
+# 2. facet_grid
+ggplot(mtcars, aes(x = hp, y = mpg)) +
+  facet_grid(cyl ~ gear) +
+  geom_point()
+```
