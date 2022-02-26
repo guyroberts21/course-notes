@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-blog",
+  "name": "course-notes",
   "private": true,
-  "description": "A starter for a blog powered by Gatsby and Markdown",
+  "description": "Gatsby and Markdown powered course notes website",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Guy Roberts <guyroberts21@outlook.com>",
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"
   },
